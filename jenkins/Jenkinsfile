@@ -2,7 +2,7 @@ pipeline {
     agent {
         docker {
             image 'maven:latest'
-            args '-v /root/.m2:/root/.m2 -u root'
+            args '-v /opt/maven/settings.xml:/usr/share/maven/conf/settings.xml -v /opt/repository:/opt/repository -u root'
         }
     }
     stages {
